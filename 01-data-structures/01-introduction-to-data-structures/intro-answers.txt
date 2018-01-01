@@ -2,7 +2,7 @@ Line
 
 1. How does your data structure allow developers to access and manipulate the data?
 
-Develops have access the ability to add, remove and search for members in the line through the provided methods.
+Develops have the ability to add, remove and search for members in the line through the provided methods.
 
 2. If a developer wanted to find a specific element in your data structure, how would you search for it?
 
@@ -11,3 +11,17 @@ The developer would search by name of the person in the line.
 3. What other real-world data can each structure represent?
 
 This data structure can simulate a queue at a fast-food restaurant.
+
+Screen
+
+1. How does your data structure allow developers to access and manipulate the data?
+
+Developers have the ability to add pixels to the screen by providing x,y coordinates on where to position the pixel. The data structure then maps these coordinates to the screen using a multidimensional array.
+
+2. If a developer wanted to find a specific element in your data structure, how would you search for it?
+
+The developer would search using the x,y coordinates relative to the screen.
+
+3. What other real-world data can each structure represent?
+
+This data structure can represent real-world construction projects and where to position buildings and structures.
