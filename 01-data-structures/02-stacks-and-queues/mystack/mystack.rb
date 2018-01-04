@@ -18,6 +18,6 @@ class MyStack
   end
 
   def empty?
-    @stack === [] ? true : false
+    @stack === []
   end
 end

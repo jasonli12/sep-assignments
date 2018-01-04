@@ -20,6 +20,6 @@ class MyQueue
   end
 
   def empty?
-    @queue === [] ? true : false
+    @queue === []
   end
 end
