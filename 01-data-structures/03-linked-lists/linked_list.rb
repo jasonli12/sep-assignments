@@ -77,4 +77,34 @@ class LinkedList
     @head.next = nil
     @head = temp
   end
+
+  # This method finds the nth node.
+  def find_n_node(n)
+    if @head
+      current_node = @head
+      counter = 1
+      while current_node.next && counter < n
+        current_node = current_node.next
+        n += 1
+      end
+      counter === n ? current_node : nil
+    end
+  end
+
+  # This method removes the nth node.
+  def remove_n_node(n)
+    if @head
+      node_before = find_n_node(n - 1)
+      target_node = find_n_node(n)
+      node_after = find_n_node(n + 1)
+
+      if @head === target_node
+        @head = target_node.next if target_node.next
+        target_node.next = nil
+      elsif target_node
+        node_after ? node_before.next = node_after : node_before.next = nil
+        target_node.next = nil
+      end
+    end
+  end
 end
