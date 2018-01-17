@@ -11,12 +11,8 @@ class LinkedList
   # This method creates a new `Node` using `data`, and inserts it at the end of the list.
   def add_to_tail(node)
     if @head
-      current_node = @head
-      while current_node.next
-        current_node = current_node.next
-      end
-      current_node.next = node
-    @tail = node
+      @tail.next = node
+      @tail = node
     else
       @head = node
       @tail = node
@@ -87,7 +83,7 @@ class LinkedList
         current_node = current_node.next
         n += 1
       end
-      counter === n ? current_node : nil
+      return current_node
     end
   end
 
@@ -95,15 +91,14 @@ class LinkedList
   def remove_n_node(n)
     if @head
       node_before = find_n_node(n - 1)
-      target_node = find_n_node(n)
-      node_after = find_n_node(n + 1)
+      target_node = node_before.next
+      node_after = target_node.next
 
       if @head === target_node
-        @head = target_node.next if target_node.next
+        @head = target_node.next
         target_node.next = nil
       elsif target_node
-        node_after ? node_before.next = node_after : node_before.next = nil
-        target_node.next = nil
+        node_before.next = node_after
       end
     end
   end
