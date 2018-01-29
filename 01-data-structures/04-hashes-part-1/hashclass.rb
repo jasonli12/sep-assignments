@@ -12,9 +12,9 @@ class HashClass
       @items[new_item_index] = new_hash_item
     elsif @items[new_item_index].key == key &&  @items[new_item_index].value != value
       resize
-    elsif @items[new_item_index].key != key 
+    elsif @items[new_item_index].key != key
       resize
-      self.[]=(key, value)
+      self[key] = value
     end
   end
 
@@ -30,7 +30,7 @@ class HashClass
     @items = Array.new(new_array_size)
     temp.each do |item|
       if item
-        self.[]=(item.key, item.value)
+        self[item.key]= item.value
       end
     end
   end
@@ -39,11 +39,7 @@ class HashClass
   # We are hashing based on strings, let's use the ascii value of each string as
   # a starting point.
   def index(key, size)
-    sum = 0
-    key.each_byte do |c|
-      sum += c
-    end
-    sum % size
+    key.sum % size
   end
 
   # Simple method to return the number of items in the hash
