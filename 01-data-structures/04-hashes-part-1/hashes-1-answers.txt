@@ -1,0 +1,3 @@
+Explain why doubling the size of the underlying array of your HashClass may be a poor idea.
+
+While a small number of insertions would not cause the underlying array to grow too much, as you have more collisions, you will find that resizing leaves a lot of empty slots in your array, which is not an efficient use of memory. Also, arrays must occupy consecutive memory blocks, so as the size of the array grows, the operating system will need to rearrange the memory space to make room for the array, which is an expensive operation. It also slows down the computer and prevents the operating system from performing other more valuable tasks.
