@@ -10,14 +10,8 @@ class LinkedList
 
   # This method creates a new `Node` using `data`, and inserts it at the end of the list.
   def add_to_tail(node)
-    if @head
-      @tail.next = node
-      @tail = node
-    else
-      @head = node
-      @tail = node
-    end
-
+    @head ? @tail.next = node : @head = node
+    @tail = node
   end
 
   # This method removes the last node in the lists and must keep the rest of the list intact.
@@ -26,7 +20,7 @@ class LinkedList
       @head, @tail, = nil, nil
     elsif @head
       current_node = @head
-      while current_node.next && current_node.next != @tail
+      while current_node.next != @tail
         current_node = current_node.next
       end
       current_node.next = nil
@@ -34,6 +28,7 @@ class LinkedList
     end
   end
 
+  # This method prints out a representation of the list.
   def print
     current_node = @head if @head
     while current_node
@@ -41,6 +36,7 @@ class LinkedList
       current_node = current_node.next
     end
   end
+
   # This method removes `node` from the list and must keep the rest of the list intact.
   def delete(node)
     if @head === node && @head.next
@@ -51,13 +47,8 @@ class LinkedList
       while current_node.next != node
         current_node = current_node.next
       end
-
-      if @tail === node
-        current_node.next = nil
-        @tail = current_node
-      else
-         current_node.next = node.next
-      end
+     current_node.next = node.next
+     @tail = current_node if @tail === node
     end
   end
 
@@ -72,34 +63,5 @@ class LinkedList
     temp = @head.next if @head
     @head.next = nil
     @head = temp
-  end
-
-  # This method finds the nth node.
-  def find_n_node(n)
-    if @head
-      current_node = @head
-      counter = 1
-      while current_node.next && counter < n
-        current_node = current_node.next
-        n += 1
-      end
-      return current_node
-    end
-  end
-
-  # This method removes the nth node.
-  def remove_n_node(n)
-    if @head
-      node_before = find_n_node(n - 1)
-      target_node = node_before.next
-      node_after = target_node.next
-
-      if @head === target_node
-        @head = target_node.next
-        target_node.next = nil
-      elsif target_node
-        node_before.next = node_after
-      end
-    end
   end
 end
