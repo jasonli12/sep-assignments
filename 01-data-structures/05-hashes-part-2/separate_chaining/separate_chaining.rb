@@ -86,4 +86,19 @@ class SeparateChaining
       end
     end
   end
+
+  def print
+    p "The load factor is #{load_factor}"
+    @items.each_with_index do |llist, index|
+      if llist
+        current_node = llist.head
+        string = " " + current_node.value
+        while current_node.next
+          current_node = current_node.next
+          string += ", followed by " + current_node.value
+        end
+        p "Index #{index} contains #{string}"
+      end
+    end
+  end
 end

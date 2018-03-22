@@ -79,4 +79,11 @@ class OpenAddressing
       self[item.key] = item.value if item
     end
   end
+
+  def print
+    p "The load factor is " + (number_of_items.to_f / size).to_s
+    @items.each_with_index do |item, index|
+      p "Index #{index} contains "+ @items[index].value if item
+    end
+  end
 end
