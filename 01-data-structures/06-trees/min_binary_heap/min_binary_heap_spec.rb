@@ -95,4 +95,36 @@ RSpec.describe MinBinaryHeap, type: Class do
       expect(heap.find(empire.title)).to be_nil
     end
   end
+
+  describe "#printf" do
+     specify {
+       expected_output = "Pacific Rim: 72\nBraveheart: 78\nStar Wars: Return of the Jedi: 80\nThe Matrix: 87\nDistrict 9: 90\nStar Wars: The Empire Strikes Back: 94\nInception: 86\nStar Wars: A New Hope: 93\nThe Shawshank Redemption: 91\nThe Martian: 92\nMad Max 2: The Road Warrior: 98\n"
+       heap.insert(hope)
+       heap.insert(empire)
+       heap.insert(jedi)
+       heap.insert(martian)
+       heap.insert(pacific_rim)
+       heap.insert(inception)
+       heap.insert(braveheart)
+       heap.insert(shawshank)
+       heap.insert(district)
+       heap.insert(mad_max_2)
+       expect { heap.printf }.to output(expected_output).to_stdout
+     }
+
+     specify {
+       expected_output = "Pacific Rim: 72\nStar Wars: Return of the Jedi: 80\nBraveheart: 78\nThe Matrix: 87\nThe Shawshank Redemption: 91\nDistrict 9: 90\nInception: 86\nMad Max 2: The Road Warrior: 98\nThe Martian: 92\nStar Wars: The Empire Strikes Back: 94\nStar Wars: A New Hope: 93\n"
+       heap.insert(mad_max_2)
+       heap.insert(district)
+       heap.insert(shawshank)
+       heap.insert(braveheart)
+       heap.insert(inception)
+       heap.insert(pacific_rim)
+       heap.insert(martian)
+       heap.insert(jedi)
+       heap.insert(empire)
+       heap.insert(hope)
+       expect { heap.printf }.to output(expected_output).to_stdout
+     }
+  end
 end
