@@ -122,32 +122,3 @@ class MinBinaryHeap
     end
   end
 end
-
-root = Node.new("The Matrix", 87)
-heap = MinBinaryHeap.new(root)
-pacific_rim = Node.new("Pacific Rim", 72)
-braveheart = Node.new("Braveheart", 78)
-jedi = Node.new("Star Wars: Return of the Jedi", 80)
-donnie = Node.new("Donnie Darko", 85)
-inception = Node.new("Inception", 86)
-district = Node.new("District 9", 90)
-shawshank = Node.new("The Shawshank Redemption", 91)
-martian = Node.new("The Martian", 92)
-hope = Node.new("Star Wars: A New Hope", 93)
-empire = Node.new("Star Wars: The Empire Strikes Back", 94)
-mad_max_2 = Node.new("Mad Max 2: The Road Warrior", 98)
-
-heap.insert(pacific_rim)
-heap.insert(district)
-heap.insert(braveheart)
-heap.insert(inception)
-heap.insert(jedi)
-heap.insert(empire)
-heap.insert(donnie)
-# puts "Before delete"
-heap.printf
-p heap.find("Inception")
-# heap.delete("Star Wars: Return of the Jedi")
-# puts "Delete complete"
-# heap.printf
-# p heap.find("Donnie Darko")
