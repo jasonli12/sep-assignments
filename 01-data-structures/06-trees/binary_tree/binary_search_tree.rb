@@ -26,10 +26,17 @@ class BinarySearchTree
   end
 
   # Recursive Depth First Search
+  #base case -> keep track that we found
   def find(root, data)
+    result = nil
     return root if root.title === data
-    return find(root.left, data) if root.left
-    return find(root.right, data) if root.right
+    if root.left
+      result = find(root.left, data)
+    end
+    if root.right && !result
+      result = find(root.right, data)
+    end
+    return result
   end
 
   def delete(root, data)
@@ -92,3 +99,23 @@ class BinarySearchTree
     end
   end
 end
+
+root = Node.new("The Matrix", 87)
+tree = BinarySearchTree.new(root)
+pacific_rim = Node.new("Pacific Rim", 72)
+braveheart = Node.new("Braveheart", 78)
+jedi = Node.new("Star Wars: Return of the Jedi", 80)
+donnie = Node.new("Donnie Darko", 85)
+inception = Node.new("Inception", 86)
+district = Node.new("District 9", 90)
+shawshank = Node.new("The Shawshank Redemption", 91)
+martian = Node.new("The Martian", 92)
+hope = Node.new("Star Wars: A New Hope", 93)
+empire = Node.new("Star Wars: The Empire Strikes Back", 94)
+mad_max_2 = Node.new("Mad Max 2: The Road Warrior", 98)
+
+tree.insert(root, pacific_rim)
+tree.insert(root, district)
+tree.printf
+p tree.find(root, pacific_rim.title)
+p tree.find(root, district.title)
