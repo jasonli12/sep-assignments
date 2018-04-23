@@ -1,0 +1,61 @@
+1. Print both Trees to the console and compare the difference between your Binary Search Tree and your Heap.
+
+Binary Tree Print Output
+
+Shrek: 88
+Iron Man 3: 80
+My Neighbor Totoro: 94
+Despicable Me 3: 59
+Kung Fu Panda: 87
+Harry Potter and the Prisoner of Azkaban: 91
+Moana: 96
+Ice Age: 77
+Captain Underpants: The First Epic Movie: 86
+The Lion King: 92
+Chicken Run: 97
+Zootopia: 98
+
+Min Binary Heap Output
+
+Despicable Me 3: 59
+Ice Age: 77
+Captain Underpants: The First Epic Movie: 86
+Iron Man 3: 80
+Kung Fu Panda: 87
+My Neighbor Totoro: 94
+Chicken Run: 97
+Shrek: 88
+Zootopia: 98
+The Lion King: 92
+Harry Potter and the Prisoner of Azkaban: 91
+Moana: 96
+
+Both the binary tree and binary heap are very different because of their different properties. In a binary tree, a root node is passed to the tree and how deep in a tree you would have to search would be relative to the defined root node. On the other hand, for our min binary heap above, the lowest value will always be at the top of the tree. This becomes extremely helpful in cases such as priority queues. If in our example above, we made a max binary heap instead, the search for the most popular movie would be constant time each time.
+
+2. Insert all numbers from 1 to 10000 into both Trees, then use Benchmark to compare performance:
+How much time does an average insertion consume in the Binary Search Tree compared to the Heap?
+
+"Insert 1 to 10000"
+              user     system      total        real
+tree:     4.430000   0.010000   4.440000 (  4.444135)
+heap:    46.240000   0.470000  46.710000 ( 46.733007)
+
+How much time does finding 5000 in the Binary Search Tree consume compared to the Heap?
+
+"Find 5000"
+              user     system      total        real
+tree:     0.000000   0.000000   0.000000 (  0.000869)
+heap:     0.000000   0.000000   0.000000 (  0.002021)
+
+How much time does the average deletion consume in a Binary Search Tree compared to the Heap?
+
+"Delete 5000"
+              user     system      total        real
+tree:     0.000000   0.000000   0.000000 (  0.003216)
+heap:     0.010000   0.000000   0.010000 (  0.011221)
+
+When would you use a Binary Search Tree and why?
+A binary search tree would be used when we are dealing with sortable data and want to be able to efficiently insert and search for values. By inserting smaller values to the left and larger values to the right, insertion only requires traversing down a branch until an open position is found. Also, searching by value is efficient because each time you move down the tree, you can effectively ignore the other half of the tree, because you know the value you are looking for must have been inserted on this side of the tree similar to when using binary search on a sorted array.
+
+When would you use an Heap and why?
+A heap would be used when you want to establish a priority queue. For example, we might have a list of patients ranked by the severity of their medical condition and can use a max binary heap to quickly determine which patients need to be seen first. Those critical patients would be sorted to the top of the tree.

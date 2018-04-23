@@ -39,6 +39,7 @@ class MinBinaryHeap
   end
 
   def find(data)
+    return nil if data === nil
     result = nil
     queue = [@root]
     while !queue.empty?
