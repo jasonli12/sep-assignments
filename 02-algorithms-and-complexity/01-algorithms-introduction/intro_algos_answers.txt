@@ -1,0 +1,36 @@
+Algorithm #1: Calculating a tip
+
+SET Tip to 0
+GET Receipt Total from Receipt
+CASE Service Level OF
+  Poor: Compute Tip as Receipt Total * 10%
+  Average: Compute Tip as Receipt Total * 15%
+  Good: Compute Tip as Receipt Total * 20%
+ENDCASE
+RETURN Tip
+
+Algorithm #2: Determining what to wear
+
+GET Smartphone
+GET Weather Forecast from Smartphone
+IF Weather Forecast > 70 THEN
+  RETURN "T-Shirt and Shorts"
+ELSE
+  RETURN "Sweater, Jacket and Jeans"
+ENDIF
+
+
+Algorithm #3: Calculating Cash-Back Rewards from Credit Card
+
+SET Reward to 0
+GET Purchase Total from Receipt
+CASE Purchase Type OF
+  Gas: Compute Reward as Purchase Total * 3%
+  Groceries: Compute Reward as Purchase Total * 2%
+  OTHERS: Compute Reward as Purchase Total * 1%
+ENDCASE
+
+IF Redeeming Cash Back Into Same Bank Account THEN
+  Compute Reward as Reward * 110%
+ENDIF
+RETURN Reward
