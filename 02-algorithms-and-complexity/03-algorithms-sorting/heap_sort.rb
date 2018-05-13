@@ -39,8 +39,3 @@ end
 def swap(array, source_index, target_index)
   array[source_index], array[target_index] = array[target_index], array[source_index]
 end
-
-array = [0.1, 0.5, 0.3, 0.67, 0.45, 0.23, 0.02, 0.95, 0.03, 0.07, 0.8, 0.65, 0.32, 0.21]
-array_two = [10, 50, 30, 67, 45, 23, 2, 95, 3, 7, 80, 65, 32, 21]
-p heap_sort(array)
-p heap_sort(array_two)

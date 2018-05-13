@@ -1,0 +1,6 @@
+Benchmark Results
+
+user     system      total        real
+quick_sort  0.000000   0.000000   0.000000 (  0.000062)
+heap_sort  0.000000   0.000000   0.000000 (  0.000517)
+bucket_sort  0.000000   0.000000   0.000000 (  0.000006)
