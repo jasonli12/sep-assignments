@@ -11,7 +11,7 @@ def max_heapify(collection)
   swapped = false
   for i in 0...collection.length
     parent = collection[i]
-    i == 0 ? child_one_index = 1 : child_one_index = 2 * i + 1
+    child_one_index = 2 * i + 1
     child_two_index = child_one_index + 1
     collection[child_one_index] ? child_one = collection[child_one_index] : child_one = nil
     collection[child_two_index] ? child_two = collection[child_two_index] : child_two = nil
