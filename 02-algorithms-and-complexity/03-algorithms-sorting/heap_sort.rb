@@ -11,7 +11,7 @@ def max_heapify(collection)
   swapped = false
   for i in 0...collection.length
     parent = collection[i]
-    child_one_index = 2 * (i + 1) - 1
+    i == 0 ? child_one_index = 1 : child_one_index = 2 * i + 1
     child_two_index = child_one_index + 1
     collection[child_one_index] ? child_one = collection[child_one_index] : child_one = nil
     collection[child_two_index] ? child_two = collection[child_two_index] : child_two = nil
@@ -22,6 +22,9 @@ def max_heapify(collection)
       else
         swap(collection, i, child_one_index)
       end
+      swapped = true
+    elsif child_two && parent < child_two
+      swap(collection, i, child_two_index)
       swapped = true
     end
   end
@@ -36,3 +39,8 @@ end
 def swap(array, source_index, target_index)
   array[source_index], array[target_index] = array[target_index], array[source_index]
 end
+
+array = [0.1, 0.5, 0.3, 0.67, 0.45, 0.23, 0.02, 0.95, 0.03, 0.07, 0.8, 0.65, 0.32, 0.21]
+array_two = [10, 50, 30, 67, 45, 23, 2, 95, 3, 7, 80, 65, 32, 21]
+p heap_sort(array)
+p heap_sort(array_two)

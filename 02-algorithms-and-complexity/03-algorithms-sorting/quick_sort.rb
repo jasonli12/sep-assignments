@@ -11,6 +11,9 @@ def quick_sort(collection, first = 0,  last = collection.length - 1)
       i += 1
     end
   end
+  if collection.size == 2
+    return collection
+  end
   left = collection[first..(pivot_index - 1)]
   right = collection[(pivot_index + 1)..last]
   if left.length > 1
