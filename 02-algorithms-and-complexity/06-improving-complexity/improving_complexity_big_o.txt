@@ -2,4 +2,4 @@
 
 2. Improving_complexity_version_two - The Big-O is O(nlog(n)) as the number of layers or number of times we need to sort follows log(n) and at each layer, we need to compare each element, for a total of n elements, to determine which comes first.
 
-2. Improving_complexity_version_three - The Big-O is O(n^2) because when we insert each item from the collection into the linked list, we need to compare the value of the item to each value in the linked list until we find the right position to insert. Instead of storing an entire array together in memory, we are using the nodes in a linked list to connected a sorted list together and the sorting function happens during insertion.
+3. Improving_complexity_version_three - The Big-O is O(n^2) because when we insert each item from the collection into the linked list, we need to compare the value of the item to each value in the linked list until we find the right position to insert. Instead of storing an entire array together in memory, we are using the nodes in a linked list to connected a sorted list together and the sorting function happens during insertion.
